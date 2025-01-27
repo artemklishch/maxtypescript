@@ -19,7 +19,7 @@
 
 function Logger(logString: string) {
   console.log('LOGGER FACTORY')
-  return function(constructor: Function) {
+  return function (constructor: Function) {
     console.log(logString);
     console.log(constructor);
   };
@@ -33,7 +33,7 @@ function WithTemplate(template: string, hookId: string) {
     console.log('Rendering template...')
     if (hookEl) {
       hookEl.innerHTML = template;
-      hookEl.querySelector('h1')!.textContent = p.name;
+      hookEl.querySelector('h1')!.textContent = hookEl.querySelector('h1')!.textContent + ", " + p.name;
     }
   }
 }
